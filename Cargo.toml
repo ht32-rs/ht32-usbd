@@ -1,0 +1,17 @@
+[package]
+name = "ht32-usbd"
+version = "0.0.0"
+edition = "2021"
+authors = ["Jonas Spanoghe <jonas@spanoghe.net>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "'usb-device' implementation for HT32 microcontrollers"
+keywords = ["no-std", "usb", "ht32", "embedded"]
+license = "MIT"
+repository = "https://github.com/ht32-rs/ht32-usbd"
+readme = "README.md"
+exclude = [".gitignore"]
+
+[dependencies]
+vcell = "0.1.3"
+cortex-m = "0.7.7"
+usb-device = "0.2.9"
