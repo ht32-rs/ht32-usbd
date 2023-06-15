@@ -167,7 +167,6 @@ impl<USB: UsbPeripheral> usb_device::bus::UsbBus for UsbBus<USB> {
 
             regs.usb_ier.write(|w| {
                 w.ugie().set_bit();
-                w.sofie().set_bit();
                 w.urstie().set_bit();
                 w.rsmie().set_bit();
                 w.suspie().set_bit()
@@ -189,7 +188,6 @@ impl<USB: UsbPeripheral> usb_device::bus::UsbBus for UsbBus<USB> {
 
             regs.usb_ier.write(|w| {
                 w.ugie().set_bit();
-                w.sofie().set_bit();
                 w.urstie().set_bit();
                 w.rsmie().set_bit();
                 w.suspie().set_bit()
