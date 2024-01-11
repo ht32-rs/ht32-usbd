@@ -103,8 +103,9 @@ impl<USB: UsbPeripheral> usb_device::bus::UsbBus for UsbBus<USB> {
         };
 
         for index in range {
-            if ep_type == EndpointType::Isochronous && index < 4 {
-                continue;
+            match ep_type {
+                EndpointType::Isochronous { .. } if index < 4 => continue,
+                _ => (),
             }
 
             let ep = &mut self.endpoints[index];

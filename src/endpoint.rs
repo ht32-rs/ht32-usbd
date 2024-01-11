@@ -101,7 +101,10 @@ impl<USB: UsbPeripheral> Endpoint<USB> {
                 w.epdir().bit(ep_dir == UsbDirection::In);
             }
             if self.index >= 4 {
-                w.eptype().bit(ep_type == EndpointType::Isochronous);
+                match ep_type {
+                    EndpointType::Isochronous { .. } => w.eptype().set_bit(),
+                    _ => w.eptype().clear_bit(),
+                };
             }
             w.epadr().variant(self.index);
             w.epen().set_bit()
