@@ -1,6 +1,6 @@
 [package]
 name = "ht32-usbd"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Jonas Spanoghe <jonas@spanoghe.net>"]
 categories = ["embedded", "hardware-support", "no-std"]
